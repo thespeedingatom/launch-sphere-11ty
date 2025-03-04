@@ -1,11 +1,12 @@
 const rssParser = require("rss-parser");
-const fetch = require("node-fetch").default;
 require("dotenv").config();
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/scripts");
   eleventyConfig.addPassthroughCopy("src/styles");
+
   eleventyConfig.addGlobalData("news", async () => {
+    const fetch = (await import("node-fetch")).default; // Dynamic import for ESM
     const parser = new rssParser();
     const feed = await parser.parseURL(process.env.RSS_FEED_URL || "https://rss.app/feeds/8hfuhHaJJ8XpWp8p.xml");
     const items = feed.items.slice(0, process.env.RSS_ITEM_LIMIT || 10);
