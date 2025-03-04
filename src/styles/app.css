@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.card {
+  @apply w-full max-w-3xl mx-auto;
+}
+
+.card:hover {
+  @apply transform scale-102;
+}
+
+body {
+  @apply font-sans;
+}

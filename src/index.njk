@@ -1,0 +1,27 @@
+---
+layout: layouts/base.njk
+---
+<div class="space-y-6">
+  {% for item in news %}
+    <article class="card bg-base-200 shadow-xl hover:shadow-2xl transition-all duration-300">
+      <div class="card-body p-6">
+        <h2 class="card-title text-2xl md:text-3xl font-bold text-primary hover:text-accent transition-colors">
+          <a href="{{ item.link }}" target="_blank" rel="noopener">{{ item.title }}</a>
+        </h2>
+        {% if item.enclosure and item.enclosure.url %}
+          <figure class="mb-4">
+            <img src="{{ item.enclosure.url }}" alt="{{ item.title }}" class="w-full h-64 object-cover rounded-lg">
+          </figure>
+        {% else %}
+          <div class="w-full h-64 bg-base-300 rounded-lg flex items-center justify-center text-neutral">
+            No Image Available
+          </div>
+        {% endif %}
+        <p class="text-lg text-base-content">{{ item.summary }}</p>
+        <div class="card-actions mt-4">
+          <a href="{{ item.link }}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Read More</a>
+        </div>
+      </div>
+    </article>
+  {% endfor %}
+</div>

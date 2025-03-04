@@ -1,0 +1,22 @@
+{
+  "name": "launch-sphere-11ty",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "node-fetch": "^3.3.2",
+    "rss-parser": "^3.13.0"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "daisyui": "^5.0.0",
+    "tailwindcss": "^4.0.9"
+  }
+}
